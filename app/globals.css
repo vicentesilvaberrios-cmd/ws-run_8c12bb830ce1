@@ -54,6 +54,7 @@
   --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
   --shadow: 0 4px 16px rgba(16, 24, 40, 0.08);
   --container: 1120px;
+  --game-sky: #70c5ce;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -167,6 +168,7 @@ h3 { font-size: var(--fs-xl); }
 .navbar { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4);
   padding: var(--sp-3) var(--sp-4); background: var(--surface); border-bottom: 1px solid var(--border); }
 .navbar nav { display: flex; gap: var(--sp-4); flex-wrap: wrap; }
+.navbar nav a[aria-current="page"] { font-weight: 700; }
 
 /* ---- KPI ------------------------------------------------------------ */
 .kpi { display: flex; flex-direction: column; gap: var(--sp-1); }
@@ -205,6 +207,7 @@ h3 { font-size: var(--fs-xl); }
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
+  background: var(--game-sky);
 }
 .game-stage canvas {
   display: block;

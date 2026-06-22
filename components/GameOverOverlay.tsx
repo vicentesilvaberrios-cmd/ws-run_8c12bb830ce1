@@ -18,7 +18,7 @@ function getMedal(score: number): { label: string; className: string } | null {
   if (score >= MEDALS.SILVER.min)
     return { label: "Medalla de plata", className: "badge badge-warn" };
   if (score >= MEDALS.BRONZE.min)
-    return { label: "Medalla de bronce", className: "badge badge-danger" };
+    return { label: "Medalla de bronce", className: "badge badge-warn" };
   return null;
 }
 

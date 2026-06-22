@@ -13,8 +13,7 @@ export default function ScoreHUD({ score }: ScoreHUDProps) {
   return (
     <div
       className="game-overlay game-overlay--top"
-      aria-live="polite"
-      aria-atomic="true"
+      aria-live="off"
     >
       <div className="score-display" aria-label={`Puntaje: ${score}`}>
         {display}

@@ -162,6 +162,7 @@ export default function FlappyGame() {
   // Listener global de teclado para Space/Enter (fuera del canvas)
   useEffect(() => {
     const handleGlobalKey = (e: KeyboardEvent) => {
+      if (e.target instanceof HTMLElement && e.target.tagName === "A") return;
       if (e.code === "Space" || e.code === "ArrowUp") {
         // Prevenir scroll
         e.preventDefault();
@@ -195,8 +196,8 @@ export default function FlappyGame() {
 
   return (
     <div className="game-shell">
-      <div className="game-stage" style={{ background: "#70c5ce" }}>
-        <GameCanvas ref={canvasRef} onInput={handleInput} onKeyInput={handleKeyInput} />
+      <div className="game-stage">
+        <GameCanvas ref={canvasRef} onInput={handleInput} />
 
         {status === "READY" && <StartOverlay highScore={highScore} />}
         {status === "PLAYING" && <ScoreHUD score={score} />}
@@ -217,14 +218,10 @@ export default function FlappyGame() {
                   left: "8px",
                   right: "8px",
                   pointerEvents: "auto",
-                  fontSize: "0.8rem",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "space-between",
                   gap: "8px",
-                  background: "rgba(14,165,233,0.2)",
-                  color: "#fff",
-                  borderColor: "rgba(14,165,233,0.5)",
                 }}
               >
                 <span>
@@ -232,7 +229,6 @@ export default function FlappyGame() {
                 </span>
                 <button
                   className="btn btn-sm btn-ghost"
-                  style={{ color: "#fff", borderColor: "rgba(255,255,255,0.3)" }}
                   onClick={() => setSyncError(false)}
                 >
                   Cerrar

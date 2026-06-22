@@ -11,7 +11,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="es">
       <body>
-        <a href="#juego" className="sr-only" style={{ position: "absolute", left: -9999 }}>
+        <a href="#juego" className="sr-only">
           Saltar al juego
         </a>
         {children}

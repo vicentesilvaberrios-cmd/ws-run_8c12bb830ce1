@@ -21,7 +21,7 @@ export default function StartOverlay({ highScore }: StartOverlayProps) {
         <p style={{ fontWeight: 700 }}>
           Pulsa <span style={{ color: "#f7d51d" }}>Espacio</span> o tocá la pantalla para volar
         </p>
-        <p style={{ fontSize: "0.85em", opacity: 0.75 }}>
+        <p className="muted text-sm">
           En móvil: tocá. En PC: Espacio, clic o flecha arriba.
         </p>
         {highScore > 0 && (
